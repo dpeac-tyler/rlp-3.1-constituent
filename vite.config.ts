@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/rlp-3.0-constituent/' : '/',
+  base: command === 'build' ? '/rlp-3.1-constituent/' : '/',
   plugins: [
     react(),
     tailwindcss(),

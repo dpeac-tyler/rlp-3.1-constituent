@@ -223,7 +223,6 @@ interface AffiliationsSubPageProps {
 }
 
 export function AffiliationsSubPage({ subTitle }: AffiliationsSubPageProps) {
-  const { selectedAgency, setSelectedAgency } = useAgency();
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
   const [sortDir, setSortDir] = useState<SortDir>(null);
   const [pageSize, setPageSize] = useState(10);
@@ -394,44 +393,7 @@ export function AffiliationsSubPage({ subTitle }: AffiliationsSubPageProps) {
           computer in your local timezone.
         </p>
 
-        {/* USWDS-style Select Agency */}
-        <div className="w-full" style={{ marginBottom: 32 }}>
-          <label htmlFor="affil-agency-select" style={labelStyle}>
-            Select Agency
-          </label>
-          <select
-            id="affil-agency-select"
-            value={selectedAgency}
-            onChange={(e) => {
-              setSelectedAgency(e.target.value);
-              setCurrentPage(0);
-            }}
-            className="w-full"
-            style={uswdsSelectStyle}
-          >
-            {agencies.map((agency) => (
-              <option key={agency.value} value={agency.value}>
-                {agency.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Content: gated by agency selection */}
-        {!selectedAgency ? (
-          <p
-            style={{
-              fontFamily: "'Public Sans', sans-serif",
-              fontSize: 16,
-              lineHeight: "26px",
-              color: "#71767A",
-            }}
-          >
-            No Affiliations available.
-          </p>
-        ) : (
-          <>
-            {/* Icon Key Accordion */}
+        {/* Icon Key Accordion */}
             <IconKeyAccordion
               items={AFFIL_ICON_ITEMS}
               sessionKey="icon-key-affiliations-open"
@@ -844,8 +806,6 @@ export function AffiliationsSubPage({ subTitle }: AffiliationsSubPageProps) {
                   })()}
               </>
             )}
-          </>
-        )}
       </div>
     </PageShell>
   );

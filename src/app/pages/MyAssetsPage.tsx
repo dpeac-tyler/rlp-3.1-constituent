@@ -207,7 +207,6 @@ const parseDateForSort = (d: string) => {
 
 export function MyAssetsPage() {
   const navigate = useNavigate();
-  const { selectedAgency, setSelectedAgency } = useAgency();
   const [statusFilter, setStatusFilter] = useState("In Use");
   const [searchBy, setSearchBy] = useState("");
   const [searchText, setSearchText] = useState("");
@@ -379,44 +378,7 @@ export function MyAssetsPage() {
           manage all the physical items you own or oversee.
         </p>
 
-        {/* USWDS-style Select Agency */}
-        <div className="w-full" style={{ marginBottom: 32 }}>
-          <label htmlFor="assets-agency-select" style={labelStyle}>
-            Select Agency
-          </label>
-          <select
-            id="assets-agency-select"
-            value={selectedAgency}
-            onChange={(e) => {
-              setSelectedAgency(e.target.value);
-              setCurrentPage(0);
-            }}
-            className="w-full"
-            style={uswdsSelectStyle}
-          >
-            {agencies.map((agency) => (
-              <option key={agency.value} value={agency.value}>
-                {agency.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Content: gated by agency selection */}
-        {!selectedAgency ? (
-          <p
-            style={{
-              fontFamily: "'Public Sans', sans-serif",
-              fontSize: 16,
-              lineHeight: "26px",
-              color: "#71767A",
-            }}
-          >
-            No Assets available.
-          </p>
-        ) : (
-          <>
-            {/* Icon Key Accordion */}
+        {/* Icon Key Accordion */}
             <IconKeyAccordion
               items={ASSET_ICON_ITEMS}
               sessionKey="icon-key-assets-open"
@@ -983,8 +945,6 @@ export function MyAssetsPage() {
                   </nav>
                 );
               })()}
-          </>
-        )}
       </div>
     </PageShell>
   );

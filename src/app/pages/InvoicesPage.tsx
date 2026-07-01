@@ -291,7 +291,6 @@ const parseAmountForSort = (a: string) => {
 /* ── Component ─────────────────────────────────────────── */
 
 export function InvoicesPage() {
-  const { selectedAgency, setSelectedAgency } = useAgency();
   const [statusFilter, setStatusFilter] = useState("Initiated");
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
   const [sortDir, setSortDir] = useState<SortDir>(null);
@@ -446,55 +445,7 @@ export function InvoicesPage() {
           Welcome to the Invoices page.
         </p>
 
-        {/* USWDS-style Select Agency */}
-        <div className="w-full" style={{ marginBottom: 32 }}>
-          <label
-            htmlFor="invoices-agency-select"
-            style={{
-              display: "block",
-              fontFamily: "'Public Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: 16,
-              lineHeight: "24px",
-              color: "#1B1B1B",
-              marginBottom: 4,
-            }}
-          >
-            Select Agency
-          </label>
-          <select
-            id="invoices-agency-select"
-            value={selectedAgency}
-            onChange={(e) => {
-              setSelectedAgency(e.target.value);
-              setCurrentPage(0);
-            }}
-            className="w-full"
-            style={uswdsSelectStyle}
-          >
-            {agencies.map((agency) => (
-              <option key={agency.value} value={agency.value}>
-                {agency.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Content: gated by agency selection */}
-        {!selectedAgency ? (
-          <p
-            style={{
-              fontFamily: "'Public Sans', sans-serif",
-              fontSize: 16,
-              lineHeight: "26px",
-              color: "#71767A",
-            }}
-          >
-            No Invoices available.
-          </p>
-        ) : (
-          <>
-            {/* Icon Key Accordion */}
+        {/* Icon Key Accordion */}
             <IconKeyAccordion
               items={INVOICE_ICON_ITEMS}
               sessionKey="icon-key-invoices-open"
@@ -1072,8 +1023,6 @@ export function InvoicesPage() {
                   </nav>
                 );
               })()}
-          </>
-        )}
       </div>
     </PageShell>
   );

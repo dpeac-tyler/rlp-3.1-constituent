@@ -4,7 +4,6 @@ import { Eye } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { IconKeyAccordion } from "../components/IconKeyAccordion";
 import { useIsMobile } from "../hooks/useIsMobile";
-import { useAgency } from "../components/AgencyContext";
 
 /* ── Types ─────────────────────────────────────────────── */
 
@@ -32,14 +31,6 @@ export const MOCK_ASSET_DATA: AssetInstance[] = [
     status: "Active",
     activeLicenses: 1,
   },
-];
-
-/* ── Agencies ──────────────────────────────────────────── */
-
-const agencies = [
-  { value: "", label: "- Please Select -" },
-  { value: "agency-1", label: "Department of Professional & Financial Regulation" },
-  { value: "agency-2", label: "Bureau of Consumer Credit Protection" },
 ];
 
 /* ── Icon key items ────────────────────────────────────── */

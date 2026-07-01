@@ -3,7 +3,6 @@ import { Download, Eye } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { IconKeyAccordion } from "../components/IconKeyAccordion";
 import { useIsMobile } from "../hooks/useIsMobile";
-import { useAgency } from "../components/AgencyContext";
 
 /* ── Types ─────────────────────────────────────────────── */
 
@@ -119,14 +118,6 @@ const MOCK_DATA: Certification[] = [
     startDate: "06/30/2025",
     expirationDate: "06/30/2026",
   },
-];
-
-/* ── Agencies ──────────────────────────────────────────── */
-
-const agencies = [
-  { value: "", label: "- Please Select -" },
-  { value: "agency-1", label: "Department of Professional & Financial Regulation" },
-  { value: "agency-2", label: "Bureau of Consumer Credit Protection" },
 ];
 
 /* ── Icon key items ────────────────────────────────────── */

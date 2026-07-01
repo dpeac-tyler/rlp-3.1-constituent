@@ -4,13 +4,6 @@ import { PageShell } from "../components/PageShell";
 import { PacketsTable } from "../components/PacketsTable";
 import { IconKeyAccordion } from "../components/IconKeyAccordion";
 import { useIsMobile } from "../hooks/useIsMobile";
-import { useAgency } from "../components/AgencyContext";
-
-const agencies = [
-  { value: "", label: "- Please Select -" },
-  { value: "agency-1", label: "Department of Professional & Financial Regulation" },
-  { value: "agency-2", label: "Bureau of Consumer Credit Protection" },
-];
 
 export function PacketsPage() {
   const isMobile = useIsMobile();

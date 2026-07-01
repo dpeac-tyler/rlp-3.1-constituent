@@ -1,7 +1,6 @@
 import { useState, useMemo } from "react";
 import { PageShell } from "../components/PageShell";
 import { useIsMobile } from "../hooks/useIsMobile";
-import { useAgency } from "../components/AgencyContext";
 
 /* ── Types ─────────────────────────────────────────────── */
 
@@ -44,14 +43,6 @@ const MOCK_LETTERS: CorrespondenceItem[] = [
     date: "04/01/2026",
     status: "Read",
   },
-];
-
-/* ── Agencies ──────────────────────────────────────────── */
-
-const agencies = [
-  { value: "", label: "- Please Select -" },
-  { value: "agency-1", label: "Department of Professional & Financial Regulation" },
-  { value: "agency-2", label: "Bureau of Consumer Credit Protection" },
 ];
 
 /* ── Column config ─────────────────────────────────────── */

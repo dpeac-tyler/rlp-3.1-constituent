@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import menuSvgPaths from "../../imports/svg-653nymfya0";
 import logoSvgPaths from "../../imports/svg-hjn6k2buyk";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { useAgency, agencies } from "./AgencyContext";
 
 interface HeaderProps {
   isAddressVisible: boolean;
@@ -11,6 +12,8 @@ interface HeaderProps {
 export function Header({ isAddressVisible, onToggleAddress }: HeaderProps) {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
+  const { selectedAgency } = useAgency();
+  const agencyLabel = agencies.find((a) => a.value === selectedAgency)?.label ?? "";
 
   return (
     <header
@@ -18,8 +21,8 @@ export function Header({ isAddressVisible, onToggleAddress }: HeaderProps) {
       style={{ backgroundColor: "rgba(22,47,82,0.96)", height: 56 }}
     >
       <div className="flex items-center justify-between w-full h-full">
-        {/* Left side: Menu, Logo, Agency Name */}
-        <div className="flex items-center h-full">
+        {/* Left side: Menu, Logo, Tenant + Agency Name */}
+        <div className="flex items-center h-full" style={{ minWidth: 0, overflow: "hidden", flex: 1 }}>
           {/* Menu - toggles address container */}
           <button
             onClick={onToggleAddress}
@@ -91,8 +94,11 @@ export function Header({ isAddressVisible, onToggleAddress }: HeaderProps) {
             </svg>
           </div>
 
-          {/* Agency Name */}
-          <div className="flex items-center h-full">
+          {/* Tenant + Agency Name */}
+          <div
+            className="flex items-center h-full"
+            style={{ minWidth: 0, overflow: "hidden" }}
+          >
             <p
               className="text-white"
               style={{
@@ -101,9 +107,13 @@ export function Header({ isAddressVisible, onToggleAddress }: HeaderProps) {
                 fontSize: isMobile ? 14 : 20,
                 lineHeight: isMobile ? "20px" : "32px",
                 letterSpacing: "0.25px",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+                minWidth: 0,
               }}
             >
-              Name of Tenant
+              Name of Tenant{agencyLabel ? ` - ${agencyLabel}` : ""}
             </p>
           </div>
         </div>

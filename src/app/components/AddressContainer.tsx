@@ -54,12 +54,10 @@ export function AddressContainer() {
           htmlFor="switch-agency-select"
           style={{
             display: "block",
-            fontWeight: 600,
-            fontSize: 12,
-            letterSpacing: "0.08px",
-            color: "#565C65",
+            fontWeight: 700,
+            fontSize: 14,
+            color: "#1B1B1B",
             marginBottom: 4,
-            textTransform: "uppercase",
           }}
         >
           Switch Agency
@@ -73,11 +71,15 @@ export function AddressContainer() {
             fontFamily: "'Public Sans', sans-serif",
             fontSize: 13,
             color: "#1B1B1B",
-            backgroundColor: "#F0F0F0",
-            border: "1px solid #C9C9C9",
-            borderRadius: 4,
+            backgroundColor: "#FFFFFF",
+            border: "1px solid #565C65",
+            borderRadius: 0,
             padding: "4px 28px 4px 8px",
-            appearance: "auto",
+            appearance: "none",
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7 10l5 5 5-5H7z' fill='%231B1B1B'/%3E%3C/svg%3E")`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right 6px center",
+            backgroundSize: "20px",
             cursor: "pointer",
             overflow: "hidden",
             textOverflow: "ellipsis",

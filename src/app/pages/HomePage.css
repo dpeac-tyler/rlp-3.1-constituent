@@ -1,0 +1,130 @@
+a {
+  text-decoration: underline;
+}
+
+.home-content {
+  background: #fff;
+  min-height: 100%;
+  padding: 1rem;
+}
+
+.slim-banner {
+  display: flex;
+  align-items: stretch;
+  background-color: #E7F6F8;
+  margin-bottom: 1.5rem;
+}
+
+.slim-banner__bar {
+  width: 4px;
+  min-width: 4px;
+  background-color: #00BDE3;
+  flex-shrink: 0;
+}
+
+.slim-banner__body {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.slim-banner__icon {
+  flex-shrink: 0;
+}
+
+.slim-banner__text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #1B1B1B;
+  margin: 0;
+}
+
+.home-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+@media (max-width: 640px) {
+  .home-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-tile__title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+  border-bottom: 2px solid #979797;
+}
+
+.home-tile__marker {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #1796a6;
+  flex-shrink: 0;
+}
+
+.home-tile__heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1d3c5e;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+}
+
+.home-tile__items {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-tile__item {
+  display: block;
+  padding: 9px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  border-bottom: 1px solid #eef1f4;
+}
+
+.home-tile__item:last-child {
+  border-bottom: none;
+}
+
+.home-tile__item:hover,
+.home-tile__item:focus-visible {
+  background: #f5f8fb;
+  outline: none;
+}
+
+.home-tile__item:focus-visible {
+  outline: 2px solid #1796a6;
+  outline-offset: -2px;
+}
+
+.home-tile__item-inner {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.home-tile__label {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1b1b1b;
+  white-space: nowrap;
+}
+
+.home-tile__desc {
+  font-size: 14px;
+  color: #3d4a5c;
+  line-height: 1.4;
+}
+
